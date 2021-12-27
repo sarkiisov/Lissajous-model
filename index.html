@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Lissajous model</title>
+</head>
+<body>
+    <div class="modal-window">
+        <div class="modal-window-inner">
+            <div class="modal-header">
+                <p>Кривые Лиссажу</p>
+            </div>
+            <div class="modal-content">
+                <img src="./media/images/info.png" alt="info" draggable="false">
+                <p><b>Кривые Лиссажу</b> - Траектории, прочерчиваемые точкой, совершающей одновременно два гармонических колебания в двух взаимно перпендикулярных направлениях.</p>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="wrapper">
+        <div class="lissajous-canvas">
+            <div class="lissajous-container">
+                <canvas id="lissajous"></canvas>
+            </div>
+        </div>
+        <div class="lissajous-control-panel">
+            <div class="lissajous-control-panel-inner">
+                <div class="double-input-block">
+                    <div class="input-block">
+                        <label for="A-scale">A</label>
+                        <input type="number" id="A-scale" name="A-scale" value="1.5" min="0" step="0.1">
+                    </div>
+                    <div class="input-block">
+                        <label for="B-scale">B</label>
+                        <input type="number" id="B-scale" name="B-scale" value="1.5" min="0" step="0.1">
+                    </div>
+                </div>
+
+                <div class="double-input-block">
+                    <div class="input-block">
+                        <label for="lense-object-scale">a</label>
+                        <input type="number" id="a-scale" name="a-scale" value="5" step="0.1">
+                    </div>
+                    <div class="input-block">
+                        <label for="lense-object-distanсe">b</label>
+                        <input type="number" id="b-scale" name="b-scale" value="2" step="0.1">
+                    </div>
+                </div>
+
+                <div class="double-input-block">
+                    <div class="input-block">
+                        <label for="lense-object-scale">Макс. значение оси X</label>
+                        <input type="number" id="max-x" name="max-x" value="10" min="0">
+                    </div>
+                    <div class="input-block">
+                        <label for="lense-object-distanсe">Макс. значение оси Y</label>
+                        <input type="number" id="max-y" name="max-y" value="10" min="0">
+                    </div>
+                </div>
+
+                <div class="double-input-block">
+                    <div class="input-block">
+                        <label for="offset-y">Смещение по оси X</label>
+                        <input type="number" id="offset-x" name="offset-x" disabled>
+                    </div>
+                    <div class="input-block">
+                        <label for="offset-y">Смещение по оси Y</label>
+                        <input type="number" id="offset-y" name="offset-y" disabled>
+                    </div>
+                </div>
+
+                <div class="double-input-block">
+                    <div class="input-block">
+                        <label for="t1-scale">t1</label>
+                        <input type="number" id="t1-scale" name="t1-scale" value="1" min="0" step="1">
+                    </div>
+                    <div class="input-block">
+                        <label for="t2-scale">t2</label>
+                        <input type="number" id="t2-scale" name="t2-scale" value="50" min="0" step="1">
+                    </div>
+                </div>
+
+                <div class="double-input-block">
+                    <div class="input-block">
+                        <label for="phase-shift-scale">Сдвиг фаз δ <span class="notbold">(Пример: pi/2)</span></label>
+                        <input type="text" id="phase-shift-scale" name="phase-shift-scale" value="pi/2" step="0.1">
+                    </div>
+                    <div class="input-block">
+                        <label for="render-chart">ᅠ  </label>
+                        <input type="button" class="input-button" id="render-chart" name="render-chart" value="Обновить график">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script/canvas.js"></script>
+</body>
+</html>
